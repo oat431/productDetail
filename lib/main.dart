@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'component/detail_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,9 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: DetailBar(),
     );
   }
 }
