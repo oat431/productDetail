@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'component/detail_bar.dart';
+import 'component/detail_item.dart';
+import 'component/detail_info.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,6 +32,19 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DetailBar(),
+      backgroundColor: Colors.white,
+      body: Container(
+        padding: EdgeInsets.all(25.0),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Stack(
+                children: [DetailItem()],
+              ),
+              DetailInfo()
+            ]),
+      ),
     );
   }
 }
