@@ -12,8 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  flutter_chat_bubble: ^1.0.2
 
-dev_dependencies:
+  dev_dependencies:
   flutter_test:
     sdk: flutter
 
@@ -30,6 +31,7 @@ flutter:
       - assets/icon/Send_1.png
       - assets/icon/Setting_0.png
       - assets/icon/Arrow - Left 2_1.png
+      - assets/icon/Arrow - Left 2_0.png
       - assets/image/TestPic.jpg
   
   fonts:

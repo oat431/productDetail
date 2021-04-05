@@ -10,7 +10,7 @@ class DetailItem extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage('assets/image/TestPic.jpg'), fit: BoxFit.cover),
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: BorderRadius.all(Radius.circular(30)),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.7),

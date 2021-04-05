@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'component/detail_bar.dart';
 import 'component/detail_item.dart';
 import 'component/detail_info.dart';
+import 'component/detail_price.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'SFProText-Regular',
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -40,7 +42,28 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Stack(
-                children: [DetailItem()],
+                children: [
+                  Container(
+                    child: DetailItem(),
+                  ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    child: Image.asset('assets/icon/Arrow - Left 2_0.png'),
+                  ),
+                  Container(
+                    child: Center(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 60),
+                          DetailPrice(color: Colors.red),
+                          DetailPrice(color: Colors.red),
+                          DetailPrice()
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
               DetailInfo()
             ]),
