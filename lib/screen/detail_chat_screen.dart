@@ -1,18 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:product_detail/component/detail_chat.dart';
+import 'package:product_detail/component/detail_confirm_dialog.dart';
+import 'package:product_detail/screen/detail_main.dart';
 
 class ProductChatScreen extends StatefulWidget {
   static String tag = 'ProductChatScreen';
   @override
-  _ProductChatScreenState createState() => _ProductChatScreenState();
+  ProductChatScreenState createState() => ProductChatScreenState();
 }
 
-class _ProductChatScreenState extends State<ProductChatScreen> {
+class ProductChatScreenState extends State<ProductChatScreen> {
+  static var li = [
+    DetailChatSender('I love your suit'),
+    DetailChatSender('Can I join your?'),
+    DetailChatReceiver('Yes, you can')
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Image.asset('assets/icon/Arrow - Left 2_1.png'),
+        leading: GestureDetector(
+          onTap: () => {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => ProductDetailPage(),
+              ),
+              (route) => false,
+            ),
+          },
+          child: Image.asset('assets/icon/Arrow - Left 2_1.png'),
+        ),
         title: DetailChatTitle('Sahachan T.'),
         actions: [
           Image.asset('assets/icon/Notification_1.png'),
@@ -24,11 +43,7 @@ class _ProductChatScreenState extends State<ProductChatScreen> {
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: ListView(
-          children: [
-            DetailChatSender('I love your suit'),
-            DetailChatSender('Can I join your?'),
-            DetailChatReceiver('Yes, you can')
-          ],
+          children: [for (var i in li) i],
         ),
       ),
       bottomNavigationBar: BottomAppBar(
@@ -48,7 +63,20 @@ class _ProductChatScreenState extends State<ProductChatScreen> {
             IconButton(
               tooltip: 'Send request',
               icon: Image.asset('assets/icon/up-arrow-1.png'),
-              onPressed: () {},
+              onPressed: () => {
+                showAnimatedDialog(
+                  context: context,
+                  barrierDismissible: true,
+                  builder: (BuildContext context) {
+                    return SingleChildScrollView(
+                        child: ListBody(
+                      children: [DetailConfirm()],
+                    ));
+                  },
+                  animationType: DialogTransitionType.size,
+                  curve: Curves.linear,
+                ),
+              },
             ),
             SizedBox(
               width: 20,

@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   flutter_chat_bubble: ^1.0.2
+  flutter_animated_dialog: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +40,8 @@ flutter:
       - assets/icon/up-arrow-1.png
       - assets/icon/up-arrow-2.png
       - assets/icon/up-arrow-3.png
+      - assets/icon/accept.png
+      - assets/icon/denine.png
   fonts:
     - family: SFProText-Regular
       fonts:
