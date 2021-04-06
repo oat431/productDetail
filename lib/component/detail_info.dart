@@ -88,10 +88,10 @@ class DetailInfo extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.7),
+              color: Colors.grey.withOpacity(0.5),
               spreadRadius: 5,
-              blurRadius: 7,
-              offset: Offset(0, 7), // changes position of shadow
+              blurRadius: 10,
+              offset: Offset(0, 4), // changes position of shadow
             ),
           ],
         ));

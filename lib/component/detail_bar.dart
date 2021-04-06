@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:product_detail/screen/detail_chat_screen.dart';
 
 class DetailBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -34,7 +35,10 @@ class DetailBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       actions: [
-        _imageBox('assets/icon/Send_0.png'),
+        GestureDetector(
+          onTap: () => Navigator.of(context).pushNamed(ProductChatScreen.tag),
+          child: _imageBox('assets/icon/Send_0.png'),
+        ),
         _imageBox('assets/icon/Notification_0.png'),
       ],
       backgroundColor: Colors.white,
