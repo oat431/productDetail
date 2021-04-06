@@ -3,7 +3,6 @@ import 'package:product_detail/component/detail_bar.dart';
 import 'package:product_detail/component/detail_item.dart';
 import 'package:product_detail/component/detail_info.dart';
 import 'package:product_detail/component/detail_price.dart';
-import 'package:product_detail/component/detail_chat.dart';
 
 class ProductDetailPage extends StatefulWidget {
   static String tag = 'ProductdetaiPage';

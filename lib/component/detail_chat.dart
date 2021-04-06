@@ -13,10 +13,9 @@ class DetailChatTitle extends StatelessWidget {
       _title,
       style: TextStyle(
         color: Colors.black,
-        fontSize: 20,
+        fontSize: 16,
       ),
     );
-    ;
   }
 }
 
@@ -36,7 +35,7 @@ class DetailChatReceiver extends StatelessWidget {
         ),
         child: Text(
           _receiverMessage,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.black, fontSize: 18),
         ),
       ),
     );
@@ -60,7 +59,7 @@ class DetailChatSender extends StatelessWidget {
         ),
         child: Text(
           _sendMessage,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontSize: 18),
         ),
       ),
     );
