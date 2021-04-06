@@ -2,49 +2,72 @@ import 'package:flutter/material.dart';
 import 'package:product_detail/screen/detail_chat_screen.dart';
 
 class DetailConfirm extends StatelessWidget {
-  _acceptMark() {
-    ProductChatScreenState.li.add(
-      Container(
-        child: Column(
-          children: [
-            SizedBox(height: 10),
-            Image.asset('assets/icon/up-arrow-3.png'),
-            SizedBox(height: 10),
-            Text("Asking request sent"),
-            SizedBox(height: 20),
-            Image.asset(
-              'assets/icon/accept.png',
-              width: 60,
-              height: 60,
-            ),
-            SizedBox(height: 20),
-            Text("Accepted"),
-            SizedBox(height: 10),
-          ],
-        ),
+  final String _arrowPic = 'assets/icon/up-arrow-3.png';
+  final String _acceptPic = 'assets/icon/accept.png';
+  final String _declinePic = 'assets/icon/denine.png';
+  Widget _mark(String path, String msg) {
+    return Container(
+      child: Column(
+        children: [
+          SizedBox(height: 10),
+          Image.asset(_arrowPic),
+          SizedBox(height: 10),
+          Text("Asking request sent"),
+          SizedBox(height: 20),
+          Image.asset(
+            path,
+            width: 60,
+            height: 60,
+          ),
+          SizedBox(height: 20),
+          Text(msg),
+          SizedBox(height: 10),
+        ],
       ),
     );
   }
 
-  _declinedMark() {
-    ProductChatScreenState.li.add(
-      Container(
-        child: Column(
-          children: [
-            SizedBox(height: 10),
-            Image.asset('assets/icon/up-arrow-3.png'),
-            SizedBox(height: 10),
-            Text("Asking request sent"),
-            SizedBox(height: 20),
-            Image.asset(
-              'assets/icon/denine.png',
-              width: 60,
-              height: 60,
-            ),
-            SizedBox(height: 20),
-            Text("Declined"),
-            SizedBox(height: 10),
-          ],
+  Widget _showMark(String path, String msg) {
+    return Column(
+      children: [
+        Image.asset(
+          path,
+          width: 60,
+          height: 60,
+        ),
+        SizedBox(height: 10),
+        Text(
+          msg,
+          style: TextStyle(
+              fontSize: 12,
+              color: Colors.white,
+              decoration: TextDecoration.none),
+        ),
+      ],
+    );
+  }
+
+  _markGiven(String path, String msg) {
+    ProductChatScreenState.li.add(_mark(path, msg));
+  }
+
+  Widget _alertComponent(
+      String path, String msgOnDialog, String msgOnChat, BuildContext context) {
+    return GestureDetector(
+      onTap: () => {
+        _markGiven(path, msgOnChat),
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (BuildContext context) => ProductChatScreen(),
+          ),
+          (e) => false,
+        ),
+      },
+      child: Container(
+        child: _showMark(
+          path,
+          msgOnDialog,
         ),
       ),
     );
@@ -57,7 +80,7 @@ class DetailConfirm extends StatelessWidget {
       width: 200.0,
       child: Column(
         children: [
-          Image.asset('assets/icon/up-arrow-3.png'),
+          Image.asset(_arrowPic),
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -78,71 +101,11 @@ class DetailConfirm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              GestureDetector(
-                onTap: () => {
-                  _acceptMark(),
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => ProductChatScreen(),
-                    ),
-                    (e) => false,
-                  ),
-                },
-                child: Container(
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        'assets/icon/accept.png',
-                        width: 60,
-                        height: 60,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Accept',
-                        style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.white,
-                            decoration: TextDecoration.none),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              _alertComponent(_acceptPic, "Accept", "Accepted", context),
               SizedBox(
                 width: 40,
               ),
-              GestureDetector(
-                onTap: () => {
-                  _declinedMark(),
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => ProductChatScreen(),
-                    ),
-                    (e) => false,
-                  ),
-                },
-                child: Container(
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        'assets/icon/denine.png',
-                        width: 60,
-                        height: 60,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Decline',
-                        style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.white,
-                            decoration: TextDecoration.none),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              _alertComponent(_declinePic, "Decline", "Declined", context)
             ],
           ),
         ],
