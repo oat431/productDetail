@@ -67,13 +67,14 @@ class ProductChatScreenState extends State<ProductChatScreen> {
                 showAnimatedDialog(
                   context: context,
                   barrierDismissible: true,
+                  barrierColor: Colors.white10,
                   builder: (BuildContext context) {
                     return SingleChildScrollView(
                         child: ListBody(
                       children: [DetailConfirm()],
                     ));
                   },
-                  animationType: DialogTransitionType.size,
+                  animationType: DialogTransitionType.sizeFade,
                   curve: Curves.linear,
                 ),
               },

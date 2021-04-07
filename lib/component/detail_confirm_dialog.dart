@@ -40,7 +40,7 @@ class DetailConfirm extends StatelessWidget {
           msg,
           style: TextStyle(
               fontSize: 12,
-              color: Colors.white,
+              color: Colors.black,
               decoration: TextDecoration.none),
         ),
       ],
@@ -91,7 +91,7 @@ class DetailConfirm extends StatelessWidget {
                 "Sahachan T.'s ask for join in \n หาคนซื้อเสื้อผ้า...",
                 style: TextStyle(
                     fontSize: 12,
-                    color: Colors.white,
+                    color: Colors.black,
                     decoration: TextDecoration.none),
               ),
             ],

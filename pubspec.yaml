@@ -14,6 +14,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_chat_bubble: ^1.0.2
   flutter_animated_dialog: ^2.0.0
+  adv_fab: ^1.0.5
+  expansion_card: ^0.1.0
+  custom_info_window: ^1.0.0
+  vs_scrollbar: ^0.2.0
+  draggable_scrollbar_sliver: ^0.0.3
 
 dev_dependencies:
   flutter_test:
