@@ -14,11 +14,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_chat_bubble: ^1.0.2
   flutter_animated_dialog: ^2.0.0
-  adv_fab: ^1.0.5
-  expansion_card: ^0.1.0
-  custom_info_window: ^1.0.0
   vs_scrollbar: ^0.2.0
   draggable_scrollbar_sliver: ^0.0.3
+  show_more_text_popup: ^0.2.0
+  prompt_dialog: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -47,7 +46,18 @@ flutter:
       - assets/icon/up-arrow-3.png
       - assets/icon/accept.png
       - assets/icon/denine.png
+      - assets/icon/home_2.png
+      - assets/icon/home.png
+      - assets/icon/up_solid_arrow.png
+      - assets/icon/up_solid_arrow_2.png
+      - assets/icon/user.png
+      - assets/icon/user_2.png
   fonts:
     - family: SFProText-Regular
       fonts:
         - asset: assets/SFProText-Regular.ttf
+
+    - family: FC-Minimal-Regular
+      fonts:
+        - asset: assets/FC-Minimal-Regular.ttf
+       
