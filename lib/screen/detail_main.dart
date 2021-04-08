@@ -34,9 +34,12 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               child: Center(
                 child: Column(
                   children: [
+                    SizedBox(
+                      height: 80,
+                    ),
                     DetailPrice(color: Colors.red),
                     DetailPrice(color: Colors.red),
-                    DetailPrice()
+                    DetailPrice(color: Colors.white),
                   ],
                 ),
               ),
@@ -55,13 +58,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
       backgroundColor: Colors.white,
       body: DetailScrollBar(product_detail),
       bottomNavigationBar: DetailBottomBar(),
-      floatingActionButton: Visibility(
-        visible: false,
-        child: AdvFab(
-          showLogs: true,
-          controller: AdvFabController(),
-        ),
-      ),
     );
   }
 }
