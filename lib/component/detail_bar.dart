@@ -39,7 +39,10 @@ class DetailBar extends StatelessWidget implements PreferredSizeWidget {
           onTap: () => Navigator.of(context).pushNamed(ProductChatScreen.tag),
           child: _imageBox('assets/icon/Send_0.png'),
         ),
-        _imageBox('assets/icon/Notification_0.png'),
+        GestureDetector(
+          onTap: () => {},
+          child: _imageBox('assets/icon/Notification_0.png'),
+        )
       ],
       backgroundColor: Colors.white,
       elevation: 0,

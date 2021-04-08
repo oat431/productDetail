@@ -7,32 +7,14 @@ class DetailScrollBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DraggableScrollbar(
-      controller: ScrollController(),
+    return DraggableScrollbar.rrect(
       child: ListView(
-        controller: ScrollController(),
         children: [this.custom_widget],
       ),
+      controller: ScrollController(),
       alwaysVisibleScrollThumb: true,
-      heightScrollThumb: 0,
       backgroundColor: Colors.orange,
-      scrollThumbBuilder: (
-        Color backgroundColor,
-        Animation<double> thumbAnimation,
-        Animation<double> labelAnimation,
-        double height, {
-        Text labelText,
-        BoxConstraints labelConstraints,
-      }) {
-        return FadeTransition(
-          opacity: thumbAnimation,
-          child: Container(
-            height: 60,
-            width: 20.0,
-            color: backgroundColor,
-          ),
-        );
-      },
+      heightScrollThumb: 80.0,
     );
   }
 }
