@@ -3,12 +3,12 @@ import 'package:product_detail/screen/detail_chat_screen.dart';
 
 class DetailBar extends StatelessWidget implements PreferredSizeWidget {
   @override
-  Size get preferredSize => const Size.fromHeight(60);
+  Size get preferredSize => const Size.fromHeight(50);
 
   Widget _imageBox(String name) {
     return Image.asset(
       name,
-      scale: 1.8,
+      scale: 2,
     );
   }
 
@@ -26,7 +26,7 @@ class DetailBar extends StatelessWidget implements PreferredSizeWidget {
         child: Row(
           children: [
             SizedBox(
-              width: 32,
+              width: 16,
             ),
             _textDetail('Following'),
             _textDetail('Location')

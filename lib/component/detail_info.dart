@@ -20,6 +20,7 @@ class DetailInfo extends StatelessWidget {
         context,
         style: TextStyle(
           fontWeight: FontWeight.bold,
+          fontFamily: 'FC-Minimal-Regular',
         ),
       ),
     );

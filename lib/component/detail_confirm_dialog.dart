@@ -92,7 +92,8 @@ class DetailConfirm extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 12,
                     color: Colors.black,
-                    decoration: TextDecoration.none),
+                    decoration: TextDecoration.none,
+                    fontFamily: 'FC Minimal Regular'),
               ),
             ],
           ),
