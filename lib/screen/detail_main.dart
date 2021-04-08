@@ -5,7 +5,6 @@ import 'package:product_detail/component/detail_info.dart';
 import 'package:product_detail/component/detail_price.dart';
 import 'package:product_detail/component/detail_bottom_bar.dart';
 import 'package:product_detail/component/detail_scroll_bar.dart';
-import 'package:adv_fab/adv_fab.dart';
 
 class ProductDetailPage extends StatefulWidget {
   static String tag = 'ProductdetaiPage';
@@ -37,9 +36,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     SizedBox(
                       height: 80,
                     ),
-                    DetailPrice(color: Colors.red),
-                    DetailPrice(color: Colors.red),
-                    DetailPrice(color: Colors.white),
+                    DetailPrice(isBook: true),
+                    DetailPrice(isBook: true),
+                    DetailPrice(isBook: false),
                   ],
                 ),
               ),
